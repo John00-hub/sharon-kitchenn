@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sharon Kitchenn | Luxury Food Trays &amp; Event Catering Lagos</title>
+<style>
+  :root {
+    --bg: #0D0907;
+    --surface: #18110E;
+    --card: #211713;
+    --gold: #F59E0B;
+    --gold-hi: #FDE68A;
+    --rose: #FB7185;
+    --green: #10B981;
+    --text: #FFFBEB;
+    --muted: #D6D3D1;
+    --border: rgba(245, 158, 11, 0.28);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.55;
+    padding-bottom: 90px;
+  }
+  .nav {
+    position: sticky; top: 0; z-index: 60;
+    background: rgba(13, 9, 7, 0.93);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border);
+    padding: 13px 18px;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .logo { font-weight: 900; font-size: 16px; color: var(--gold-hi); letter-spacing: 0.05em; }
+  .logo span { display: block; font-size: 10px; color: var(--muted); letter-spacing: 0.14em; }
+  .cart-pill {
+    background: var(--gold); color: #0D0907; font-weight: 900; font-size: 12.5px;
+    padding: 8px 14px; border-radius: 99px; border: none; cursor: pointer;
+  }
+
+  .hero {
+    padding: 48px 18px 38px;
+    text-align: center;
+    background:
+      radial-gradient(circle at 50% 0%, rgba(245,158,11,0.24), transparent 65%),
+      linear-gradient(180deg, #1A100B 0%, #0D0907 100%);
+    border-bottom: 1px solid var(--border);
+  }
+  .pill {
+    display: inline-block; background: rgba(245,158,11,0.14); border: 1px solid var(--border);
+    color: var(--gold-hi); font-size: 11px; font-weight: 800; padding: 5px 12px;
+    border-radius: 99px; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 12px;
+  }
+  h1 { font-size: clamp(25px, 5.5vw, 40px); line-height: 1.16; max-width: 700px; margin: 0 auto 12px; }
+  h1 em { font-style: normal; color: var(--gold-hi); }
+  .hero p { color: var(--muted); max-width: 570px; margin: 0 auto 20px; font-size: 14.5px; }
+
+  .sec { max-width: 980px; margin: 32px auto; padding: 0 16px; }
+  .tabs { display: flex; gap: 8px; overflow-x: auto; padding-bottom: 10px; margin-bottom: 16px; }
+  .t-btn {
+    background: var(--card); color: var(--muted); border: 1px solid var(--border);
+    padding: 8px 15px; border-radius: 99px; font-size: 12.5px; font-weight: 800;
+    cursor: pointer; white-space: nowrap;
+  }
+  .t-btn.active { background: var(--gold); color: #0D0907; }
+
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(265px, 1fr)); gap: 15px; }
+  .item {
+    background: var(--card); border: 1px solid var(--border); border-radius: 14px;
+    padding: 16px; display: flex; flex-direction: column;
+  }
+  .item-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 8px; margin-bottom: 8px; }
+  .emoji { font-size: 28px; }
+  .price { background: rgba(245,158,11,0.16); color: var(--gold-hi); font-weight: 900; font-size: 14px; padding: 4px 10px; border-radius: 8px; border: 1px solid var(--border); }
+  .item h3 { font-size: 16.5px; margin-bottom: 6px; }
+  .item p { font-size: 12.8px; color: var(--muted); margin-bottom: 14px; flex: 1; }
+  .add-btn {
+    background: linear-gradient(135deg, var(--gold-hi), var(--gold));
+    color: #0D0907; border: none; border-radius: 9px; padding: 11px;
+    font-weight: 900; font-size: 13px; cursor: pointer;
+  }
+
+  .checkout-box {
+    background: var(--surface); border: 1.5px solid var(--gold); border-radius: 16px;
+    padding: 20px 16px;
+  }
+  .checkout-box h2 { font-size: 20px; margin-bottom: 6px; color: var(--gold-hi); }
+  .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 14px; }
+  @media (max-width: 600px) { .form-grid { grid-template-columns: 1fr; } }
+  label { display: block; font-size: 12px; font-weight: 700; color: var(--gold-hi); margin-bottom: 4px; }
+  input, select, textarea {
+    width: 100%; background: #0B0705; border: 1px solid rgba(255,255,255,0.16);
+    color: var(--text); padding: 11px; border-radius: 9px; font-size: 13.5px;
+  }
+  .cart-lines {
+    margin: 14px 0; padding: 12px; background: rgba(0,0,0,0.35);
+    border-radius: 10px; border: 1px solid rgba(255,255,255,0.08); font-size: 13px;
+  }
+  .wa-btn {
+    width: 100%; background: var(--green); color: #022C22; border: none;
+    padding: 15px; border-radius: 10px; font-size: 15px; font-weight: 900; cursor: pointer;
+  }
+  .sticky-bar {
+    position: fixed; bottom: 12px; left: 12px; right: 12px; max-width: 780px; margin: 0 auto;
+    background: #064E3B; border: 2px solid var(--green); border-radius: 12px;
+    padding: 12px 16px; display: flex; justify-content: space-between; align-items: center;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.65); z-index: 70;
+  }
+  .sticky-bar a { background: var(--gold-hi); color: #0D0907; font-weight: 900; font-size: 13px; padding: 8px 14px; border-radius: 8px; text-decoration: none; }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="logo">SHARON KITCHENN<span>60,000+ HOUSEHOLDS CATERED • LAGOS</span></div>
+  <button class="cart-pill" onclick="document.getElementById('orderSec').scrollIntoView({behavior:'smooth'})">
+    🛒 Tray Bag (<span id="bagCnt">1</span>)
+  </button>
+</nav>
+
+<section class="hero">
+  <span class="pill">🍱 Same-Day Lagos Delivery • UK/US Diaspora Surprise Orders</span>
+  <h1>Luxury <em>Surprise Food Trays</em> &amp; Event Cooler Combos</h1>
+  <p>Pick a ready-made Surprise Tray or 100–200 Guest Event Cooler Combo, add your personalised love/birthday note, choose your Lagos delivery zone &amp; send your order straight to Brenda!</p>
+</section>
+
+<section class="sec">
+  <div class="tabs">
+    <button class="t-btn active" onclick="filterMenu('ALL', this)">All Packages</button>
+    <button class="t-btn" onclick="filterMenu('TRAY', this)">🎁 Surprise Food Trays</button>
+    <button class="t-btn" onclick="filterMenu('COOLER', this)">🍲 Cooler &amp; Event Catering</button>
+  </div>
+  <div class="grid" id="menuGrid"></div>
+</section>
+
+<section class="sec" id="orderSec">
+  <div class="checkout-box">
+    <h2>🎁 Complete Your Tray / Catering Order</h2>
+    <p style="font-size:13px;color:var(--muted);">Perfect for Lagos clients &amp; UK/US/Canada diaspora surprising loved ones in Lagos!</p>
+
+    <div class="cart-lines" id="cartBox"></div>
+
+    <div class="form-grid">
+      <div>
+        <label>Sender Name (You) *</label>
+        <input id="sName" placeholder="e.g. Tolu (Ordering from London / Lekki)">
+      </div>
+      <div>
+        <label>Recipient Name &amp; Phone in Lagos *</label>
+        <input id="rInfo" placeholder="e.g. Adeola — 0803 XXX XXXX">
+      </div>
+      <div>
+        <label>Lagos Delivery Zone *</label>
+        <select id="dZone" onchange="renderCart()">
+          <option value="0" data-z="Pickup at Obawole, Ogba (₦0)">Pickup — Obawole, Ogba, Ikeja (₦0)</option>
+          <option value="4500" data-z="Mainland: Ikeja / Ogba / Maryland / Yaba (₦4,500)" selected>Mainland: Ikeja / Ogba / Maryland / Yaba (₦4,500)</option>
+          <option value="6500" data-z="Surulere / Gbagada / Magodo / Festac (₦6,500)">Surulere / Gbagada / Magodo / Festac (₦6,500)</option>
+          <option value="8500" data-z="Island: VI / Ikoyi / Lekki Phase 1 (₦8,500)">Island: VI / Ikoyi / Lekki Phase 1 (₦8,500)</option>
+          <option value="11000" data-z="Chevron / Ajah / Sangotedo (₦11,000)">Chevron / Ajah / Sangotedo (₦11,000)</option>
+        </select>
+      </div>
+      <div>
+        <label>Delivery Date &amp; Time *</label>
+        <input id="dDate" type="date">
+      </div>
+      <div style="grid-column: 1 / -1;">
+        <label>Delivery Street Address &amp; Custom Card Note (Birthday / Anniversary) *</label>
+        <textarea id="dNote" rows="2" placeholder="Address + Personalized card message e.g. 'Happy Birthday My King! Love always ❤️'"></textarea>
+      </div>
+    </div>
+
+    <button class="wa-btn" style="margin-top:14px;" onclick="submitOrder()">📲 Send Instant Order Ticket to Brenda on WhatsApp →</button>
+  </div>
+</section>
+
+<div class="sticky-bar">
+  <div>
+    <div style="font-size:11.5px;color:#A7F3D0;">Estimated Order Total (incl. Delivery)</div>
+    <strong id="barTot" style="font-size:17px;">₦54,500</strong>
+  </div>
+  <a href="#orderSec">Checkout →</a>
+</div>
+
+<script>
+const ITEMS = [
+  { id: 't1', cat: 'TRAY', emoji: '🍱', name: 'Classic Enjoyment Food Tray', price: 50000, desc: 'Smoky party jollof, fried rice, peppered turkey/chicken, plantain, creamy coleslaw, small chops & chilled juice (₦44k without tray).' },
+  { id: 't2', cat: 'TRAY', emoji: '💝', name: 'Special Surprise Celebration Tray', price: 120000, desc: 'Loaded multi-course surprise tray: jollof &chinese rice, jumbo prawns/peppered snail, grilled turkey, celebration mini-cake, wine & fruits.' },
+  { id: 't3', cat: 'TRAY', emoji: '👑', name: 'The 350k Royal King/Queen Tray', price: 350000, desc: 'Our viral luxury mega-spread: premium seafood & assorted proteins, celebration cake, non-alcoholic/sparkling bottle, gourmet sides, parfaits & luxury gift presentation.' },
+  { id: 'c1', cat: 'COOLER', emoji: '🍲', name: '100-Guest Party Cooler Combo', price: 650000, desc: 'Complete catering for 100 guests: smoky jollof, fried rice, chicken, beef, moi-moi, semolina, egusi, efo riro & assorted meats.' },
+  { id: 'c2', cat: 'COOLER', emoji: '🥂', name: '150-Guest Grand Cooler Combo', price: 1300000, desc: 'Full 150-guest luxury event cooler combo with optional professional Sharon Kitchenn serving team & event logistics.' },
+  { id: 'c3', cat: 'COOLER', emoji: '📦', name: 'Corporate Bulk Meal Packs (100 Packs)', price: 450000, desc: '100 freshly prepared executive meal packs for office launches, church/school programmes & corporate meetings across Lagos.' }
+];
+
+let curCat = 'ALL';
+let cart = { t1: 1 };
+document.getElementById('dDate').value = new Date(Date.now() + 86400000).toISOString().split('T')[0];
+
+function filterMenu(c, btn) {
+  curCat = c;
+  document.querySelectorAll('.t-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  renderMenu();
+}
+
+function addItem(id) {
+  cart[id] = (cart[id] || 0) + 1;
+  renderCart();
+}
+function chgQty(id, d) {
+  cart[id] = (cart[id] || 0) + d;
+  if (cart[id] <= 0) delete cart[id];
+  renderCart();
+}
+
+function renderMenu() {
+  const arr = ITEMS.filter(x => curCat === 'ALL' || x.cat === curCat);
+  document.getElementById('menuGrid').innerHTML = arr.map(x => `
+    <div class="item">
+      <div class="item-top">
+        <span class="emoji">${x.emoji}</span>
+        <span class="price">₦${x.price.toLocaleString()}</span>
+      </div>
+      <h3>${x.name}</h3>
+      <p>${x.desc}</p>
+      <button class="add-btn" onclick="addItem('${x.id}')">+ Add to Order</button>
+    </div>
+  `).join('');
+}
+
+function renderCart() {
+  const keys = Object.keys(cart);
+  let count = 0, sub = 0;
+  const rows = keys.map(k => {
+    const it = ITEMS.find(x => x.id === k);
+    const q = cart[k];
+    count += q;
+    sub += it.price * q;
+    return `<div style="display:flex;justify-content:space-between;align-items:center;padding:5px 0;border-bottom:1px solid rgba(255,255,255,0.06);">
+      <span><strong>${q}x</strong> ${it.name}</span>
+      <span>
+        ₦${(it.price * q).toLocaleString()}
+        <button onclick="chgQty('${k}',-1)" style="margin-left:6px;padding:2px 7px;background:#333;color:#fff;border:none;border-radius:4px;cursor:pointer;">-</button>
+        <button onclick="chgQty('${k}',1)" style="padding:2px 7px;background:#F59E0B;color:#000;border:none;border-radius:4px;cursor:pointer;font-weight:800;">+</button>
+      </span>
+    </div>`;
+  }).join('');
+
+  const del = Number(document.getElementById('dZone').value || 0);
+  const grand = sub + del;
+  document.getElementById('bagCnt').textContent = count;
+  document.getElementById('barTot').textContent = '₦' + grand.toLocaleString();
+  document.getElementById('cartBox').innerHTML = (rows || '<em>Select any Tray or Cooler Combo above to begin.</em>') +
+    `<div style="display:flex;justify-content:space-between;margin-top:8px;font-weight:800;color:var(--gold-hi);">
+      <span>Total (with Delivery):</span><span>₦${grand.toLocaleString()}</span>
+    </div>`;
+  return { sub, del, grand };
+}
+
+function submitOrder() {
+  const keys = Object.keys(cart);
+  if (!keys.length) { alert('Please add at least one Tray or Cooler Combo first!'); return; }
+  const lines = keys.map(k => {
+    const it = ITEMS.find(x => x.id === k);
+    return `• ${cart[k]}x ${it.name} — ₦${(it.price * cart[k]).toLocaleString()}`;
+  }).join('\n');
+  const zSel = document.getElementById('dZone');
+  const zTxt = zSel.options[zSel.selectedIndex].getAttribute('data-z');
+  const { grand } = renderCart();
+  const sName = document.getElementById('sName').value.trim() || 'Website Customer';
+  const rInfo = document.getElementById('rInfo').value.trim() || 'To confirm';
+  const dDate = document.getElementById('dDate').value;
+  const dNote = document.getElementById('dNote').value.trim() || 'None';
+
+  const msg =
+`*NEW WEBSITE ORDER — SHARON KITCHENN* 🍱✨
+
+${lines}
+🚚 *Delivery:* ${zTxt}
+💰 *TOTAL:* ₦${grand.toLocaleString()}
+
+👤 *Ordered By:* ${sName}
+🎁 *Recipient:* ${rInfo}
+📅 *Delivery Date:* ${dDate}
+💌 *Address & Gift Note:* ${dNote}
+
+Hi Brenda! Kindly send payment account details to confirm this order.`;
+
+  window.open('https://wa.me/2348130134298?text=' + encodeURIComponent(msg), '_blank');
+}
+
+renderMenu();
+renderCart();
+</script>
+</body>
+</html>
